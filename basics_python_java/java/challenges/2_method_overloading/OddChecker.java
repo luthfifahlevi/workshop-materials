@@ -11,7 +11,7 @@ public class OddChecker {
     public static boolean is_odd(int[] arr, int index) {
         // Cek apakah index valid (tidak keluar dari batas array)
         if (index < 0 || index >= arr.length) {
-            System.out.println("❌ Index di luar batas array!");
+            System.out.println("Index di luar batas array!");
             return false;
         }
 
@@ -30,6 +30,6 @@ public class OddChecker {
         int[] numbers = {2, 5, 8, 11};
         System.out.println(is_odd(numbers, 1));   // true  → arr[1] = 5
         System.out.println(is_odd(numbers, 2));   // false → arr[2] = 8
-        System.out.println(is_odd(numbers, 5));   // ❌ Index di luar batas
+        System.out.println(is_odd(numbers, 5));   // cetak "Index di luar batas array!"
     }
 }
