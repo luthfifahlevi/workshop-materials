@@ -4,16 +4,16 @@ from typing import List
 from student import Student
 
 
-DEFAULT_PATH = "python/project/student_score_manager/students.json"
+DEFAULT_PATH = Path(__file__).parent / "students.json"
 
 
-def save_to_file(students: List[Student], path: str = DEFAULT_PATH) -> None:
+def save_to_file(students: List[Student], path: Path = DEFAULT_PATH) -> None:
     data = [s.to_dict() for s in students]
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def load_from_file(path: str = DEFAULT_PATH) -> List[Student]:
+def load_from_file(path: Path = DEFAULT_PATH) -> List[Student]:
     p = Path(path)
     if not p.exists():
         return []

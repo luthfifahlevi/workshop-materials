@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import List, Optional
+from pathlib import Path
 from student import Student
 from storage import save_to_file, load_from_file, DEFAULT_PATH
 
@@ -186,13 +187,11 @@ class StudentManager:
         top = max(self.students, key=lambda s: s.average())
         print(f"📊 Rata-rata kelas: {class_avg:.2f}")
         print(f"🏆 Top student: {top.name} (avg={top.average():.2f}, grade={top.grade()})")
-
     def save_json(self) -> None:
         path = input(f"Nama file (default: {DEFAULT_PATH}): ").strip() or DEFAULT_PATH
-        save_to_file(self.students, path)
+        save_to_file(self.students, Path(path))
         print(f"💾 Data disimpan ke {path}")
-
     def load_json(self) -> None:
         path = input(f"Nama file (default: {DEFAULT_PATH}): ").strip() or DEFAULT_PATH
-        self.students = load_from_file(path)
+        self.students = load_from_file(Path(path))
         print(f"📂 Data dimuat. Total mahasiswa: {len(self.students)}")
