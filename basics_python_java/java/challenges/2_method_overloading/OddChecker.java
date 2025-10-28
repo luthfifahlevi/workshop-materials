@@ -24,11 +24,10 @@ public class OddChecker {
 
     // Method main untuk pengujian
     public static void main(String[] args) {
-        int[] numbers = {2, 5, 8, 11};
-
         System.out.println(is_odd(7));            // true  → 7 ganjil
         System.out.println(is_odd(10));           // false → 10 genap
 
+        int[] numbers = {2, 5, 8, 11};
         System.out.println(is_odd(numbers, 1));   // true  → arr[1] = 5
         System.out.println(is_odd(numbers, 2));   // false → arr[2] = 8
         System.out.println(is_odd(numbers, 5));   // ❌ Index di luar batas
